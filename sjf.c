@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-	int at[30], bt[30], temp[30],btemp[30];
+	int at[30], bt[30],btemp[30];
 	int i, lowest, count = 0, time, limit;
 	double wait_time = 0, turnaround_time = 0, end,ct[10];
 	float avg_wt, avg_tat;
@@ -14,7 +14,6 @@ int main() {
 		scanf("%d", &at[i]);
 		printf("Enter Burst Time:\t");
 		scanf("%d", &bt[i]);
-		temp[i] = bt[i];
 		btemp[i]= bt[i];
 	}
 	bt[29] = 9999;
@@ -30,7 +29,7 @@ int main() {
 			count++;
 			end = time + 1;
 			ct[lowest]=end;
-			wait_time = wait_time + end - at[lowest] - temp[lowest];
+			wait_time = wait_time + end - at[lowest] - btemp[lowest];
 
 			turnaround_time = turnaround_time + end - at[lowest];
 
